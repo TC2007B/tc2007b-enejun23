@@ -6,8 +6,8 @@
 [Discord](https://discord.gg/Ny5FnnfSh9)
 
 ## Index
-[Módulo 3 - Móviles](/mobile/README.md)
+[Módulo 3 - Móviles (DAM)](/mobile/README.md)
 
-[Módulo 4 - Ingeniería de Software](/software_engineering/README.md)
+[Módulo 4 - Ingeniería de Software (IS)](/software_engineering/README.md)
 
-[Módulo 5 - Administración de Proyectos](/project_admin/README.md)
+[Módulo 5 - Administración de Proyectos (ADM)](/project_admin/README.md)
