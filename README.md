@@ -5,6 +5,9 @@
 ## Link Discord
 [Discord](https://discord.gg/Ny5FnnfSh9)
 
+## Backlog y Sprint de la Clase
+[Proyecto](https://github.com/orgs/TC2007B/projects/1/views/1)
+
 ## Index
 [Módulo 3 - Móviles (DAM)](/mobile/README.md)
 
