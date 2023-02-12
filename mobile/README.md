@@ -14,7 +14,7 @@
 |   7   | Despliegue de Aplicaciones |
 
 ## Laboratorios Feb-Jun 2023
-| Clase | Tema        |
+| Laboratorio | Tema        |
 | ----- | ----------- |
 |   1   | Introducción a Kotlin |
 |   2   | Primera App en Kotlin con ViewBinding y diseño de layouts |
