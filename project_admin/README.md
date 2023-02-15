@@ -6,7 +6,7 @@
 ## Temario Feb-Jun 2023
 | Clase | Tema        |
 | ----- | ----------- |
-|   1   | Introducción a la Administración de Proyectos |
+|   1   | [Introducción a la Administración de Proyectos](https://docs.google.com/presentation/d/1h8R1dUkhz_IeSJdh--6orslIpFBZabpv-qk-_g2RpPk/edit?usp=sharing) |
 |   2   | Planificación de SCRUM |
 |   3   | Básicos de SCRUM |
 |   4   | Estimaciones |
