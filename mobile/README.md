@@ -3,9 +3,9 @@
 ![Tec de Monterrey](/images/logotecmty.png)
 
 ## Temario Técnico Feb-Jun 2023
-| Clase | Tema        |
-| ----- | ----------- |
-|   1   | Introducción al desarrollo móvil (Técnico) |
+| Clase | Tema        | Recursos
+| ----- | ----------- |-------- |
+|   1   | Introducción al desarrollo móvil (Técnico) | [Presentación1](https://docs.google.com/presentation/d/1QriPiwRf9AlTWUCWdEzkP1my3Y2n3eam4UlggxtaqGA/edit?usp=sharing) / [Presentación2](https://docs.google.com/presentation/d/1fMJWpEbnQGd39zwsrzVWm3hM9Myh6mWYS1Tgq8USrls/edit?usp=sharing&resourcekey=0-TC3peTh9IKAQx3IoIxJfGw)  |
 |   2   | Introducción a Kotlin |
 |   3   | Mi primera app en Android |
 |   4   | Concepto detalle vista |
@@ -14,9 +14,9 @@
 |   7   | Despliegue de Aplicaciones |
 
 ## Laboratorios Feb-Jun 2023
-| Laboratorio | Tema        |
-| ----- | ----------- |
-|   1   | Introducción a Kotlin |
+| Laboratorio | Tema        | Recursos |
+| ----- | ----------- |---- |
+|   1   | Introducción a Kotlin |  [Laboratorio](/mobile/labs/1_intro_kotlin.md) |
 |   2   | Primera App en Kotlin con ViewBinding y diseño de layouts |
 |   3   | Data classes y recyclerview |
 |   4   | Consumiendo APIs |

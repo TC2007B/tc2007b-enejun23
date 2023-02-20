@@ -7,12 +7,12 @@
 | Clase | Tema        |
 | ----- | ----------- |
 |   1   | [Introducción a la Administración de Proyectos](https://docs.google.com/presentation/d/1h8R1dUkhz_IeSJdh--6orslIpFBZabpv-qk-_g2RpPk/edit?usp=sharing) |
-|   2   | Planificación de SCRUM |
-|   3   | Básicos de SCRUM |
+|   2   | [Básicos de SCRUM](https://docs.google.com/presentation/d/1Edqt9ToygvijQ44xXrnluOidSK4dFLmMq1Grd9COFro/edit?usp=sharing) |
+|   3   | [Planificación de SCRUM](https://docs.google.com/presentation/d/1XK88lC9vSiTMQPbJuoM2GOCzbQIaPmrbxgYRfgHBMwE/edit?usp=sharing) |
 |   4   | Estimaciones |
 |   5   | Reuniones y Deuda Técnica |
 |   6   | Reuniones y Burndown Chart |
-|   7   | Celebration Grid |
+|   7   | Retrospectivas Efectivas |
 |   8   | OKR y Hapinness Door |
 |   9   | Caso de Estudio |
 |   10  | DEVOPS |
