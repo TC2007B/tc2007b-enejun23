@@ -1127,3 +1127,105 @@ Proceso de implementación de RecyclerView:
 5. Crear un layout a modo de celda para desplegarlo en la Lista
 6. Crear un ViewHolder para conectar el layout al Adapter
 
+#### Crear un Adapter para manejar el comportamiento de la Lista
+
+Lo siguiente que haremos es crear la clase Adapter, esta clase se usa únicamente en las listas y es la que sirve de medio de conexión entre los datos que pasamos y el layout xml de la celdar.
+
+Para el ejemplo que alcanzaremos en este laboratorio solo vamos a desplegar el nombre de los 3 Pokemon básicos.
+
+Para comenzar vamos a crear el archivo **PokemonAdapter**, este paso ya lo conoces entonces empezaré a omitir las capturas de pantalla para retarte a que vayas haciendo más cosas por tu cuenta. Recuerda esta es una clase normal entonces es de tipo **Class**
+
+Al crear el archivo el contenido es el siguiente 
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+class PokemonAdapter {  
+
+}
+```
+
+El siguiente paso es empezar con la herencia del Adapter para centralizar nuestra clase.
+
+Modificaremos la declaración del Class a lo siguiente:
+
+```
+class PokemonAdapter: RecyclerView.Adapter<PokemonViewHolder>() {
+```
+
+Por default veras que se marca en rojo el class PokemonAdapter si colocas el cursor encima te dirá que falta implementar algunos métodos.
+
+Al igual que cuando importamos las librerías podemos aplicar el **alt+enter** para importar los métodos que hacen falta. Seleccionamos implement members y debe aparecer la siguiente ventana.
+
+![lab_4](4_data_classes_recyclerview/4_046.png)
+
+Selecciona los 3 métodos que aparecen y luego Ok.
+
+Aparecerán los 3 métodos necesarios que conforman el RecyclerView. Ajusta tu código a que quede de la siguiente manera.
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+import android.view.LayoutInflater  
+import android.view.ViewGroup  
+import androidx.recyclerview.widget.RecyclerView  
+  
+class PokemonAdapter: RecyclerView.Adapter<PokemonViewHolder>() {  
+  
+    override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {  
+        val item = data[position]  
+        holder.bind(item)  
+    }  
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {  
+        val binding = ItemPokemonBinding.inflate(LayoutInflater.from(parent.context),parent,false)  
+        return PokemonViewHolder(binding)  
+    }  
+    override fun getItemCount(): Int {  
+        return data.size  
+    }  
+}
+```
+
+Empecemos a explicar cada uno delos métodos y cual es su función
+
+```
+override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {  
+	val item = data[position]  
+	holder.bind(item)  
+} 
+```
+
+El **onBindViewHolder** es el encargado de pintar la celda, utiliza el ViewHolder que es literalmente el encargado de conectar los componentes de una celda con el dato particular de la lista. Observa que para eso tenemos la variable **item** que se obtiene para ajustar la posición de la lista y encuadrar lo que vemos con el elemento correspondiente.
+
+```
+override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {  
+    val binding = ItemPokemonBinding.inflate(LayoutInflater.from(parent.context),parent,false)  
+    return PokemonViewHolder(binding)  
+}
+```
+
+El **onCreateViewHolder** le dice al RecyclerView que layout vamos a utilizar, e igualmente observa que utilizamos la forma del binding para cargar los componentes de la vista.
+
+```
+override fun getItemCount(): Int {  
+    return data.size  
+}
+```
+
+El **getItemCount** parece el método más insignificante puesto que solo regresa la cantidad de datos de la lista, pero da la casualidad que es el más importante por que a partir de esto el RecyclerView obtiene los parámetros necesarios para funcionar reciclando las celdas y por tanto los recursos.
+
+Lo siguiente que necesitamos es declarar una variable global de nuestra clase para almacenar la lista de datos que recibimos del **MainActivity**.
+
+```
+var data:ArrayList<PokemonBase> = ArrayList()
+```
+
+Y con esto solo nos faltan 2 pasos que es crear el layout de la celda y crear el ViewHolder para conectar todo.
+
+Proceso de implementación de RecyclerView:
+1. ~~Declarar el RecyclerView en la vista que lo va a contener~~
+2. ~~Crear los métodos de llamada dentro del Activity~~
+3. ~~Mandar la lista de datos desde el Activity al Adapter~~
+4. ~~Crear un Adapter para manejar el comportamiento de la Lista~~
+5. Crear un layout a modo de celda para desplegarlo en la Lista
+6. Crear un ViewHolder para conectar el layout al Adapter
