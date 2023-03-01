@@ -1110,7 +1110,7 @@ class MainActivity: Activity() {
             LinearLayoutManager.VERTICAL,  
             false)  
         binding.RVPokemon.layoutManager = linearLayoutManager  
-        adapter.CommonsAdapter(dataForList)  
+        adapter.PokemonAdapter(dataForList)  
         binding.RVPokemon.adapter = adapter  
     }  
   
@@ -1229,3 +1229,229 @@ Proceso de implementación de RecyclerView:
 4. ~~Crear un Adapter para manejar el comportamiento de la Lista~~
 5. Crear un layout a modo de celda para desplegarlo en la Lista
 6. Crear un ViewHolder para conectar el layout al Adapter
+
+#### Crear un layout a modo de celda para desplegarlo en la Lista
+
+Para crear este layout nos iremos a la carpeta **res** y como en el **activity_main** vamos a crear el **item_pokemon**.
+
+Vamos a sustituir el **ConstraintLayout** por un **LinearLayout**
+
+Para la celda debemos considerar un punto **muy importante** y es que la propiedad **layout_height** está marcada como **match_parent** para una celda en una lista no es el caso ideal ya que las celdas son continuas, y si lo dejamos como esta la celda abarcara toda la pantalla, funcionará, pero se vera extraño.
+
+Por tanto modificaremos la propiedad a **wrap_content**.
+
+Además agregaremos la propiedad **orientation** para definir que la dirección del layout es vertical.
+
+El resultado será algo como lo siguiente.
+
+```
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content"  
+    android:orientation="vertical"  
+    >  
+  
+</LinearLayout>
+```
+
+Ahora vamos a proceder a maquetar nuestra celda, para ello vamos a realizar algo muy sencillo agregando una imagen que en el próximo laboratorio sustituiremos por la imagen del Pokemon y un texto para desplegar el nombre.
+
+Por el momento sustituye el contenido a este:
+
+```
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout  
+    xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="match_parent"  
+    android:layout_height="wrap_content"  
+    android:orientation="vertical"  
+    android:padding="16dp"  
+    >  
+  
+    <ImageView        android:layout_width="120dp"  
+        android:layout_height="120dp"  
+        android:src="@mipmap/ic_launcher"  
+        android:layout_gravity="center"  
+        android:id="@+id/IVPhoto"  
+        />  
+    <TextView        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:textSize="18sp"  
+        android:textColor="@color/black"  
+        android:gravity="center"  
+        android:layout_marginTop="16dp"  
+        android:text="Nombre"  
+        android:id="@+id/TVName"  
+        />  
+</LinearLayout>
+```
+
+Con más calma revisa las diferentes propiedades que estamos utilizando para que vayas aprendiendo las que son más comúnmente usadas al momento de generar una interfaz.
+
+**Nota: Las propiedades del xml son como css son con la práctica y la necesidad las iras conociendo**
+
+Ya tenemos nuestra celda ahora terminemos conectando todo con el ViewHolder.
+
+Proceso de implementación de RecyclerView:
+1. ~~Declarar el RecyclerView en la vista que lo va a contener~~
+2. ~~Crear los métodos de llamada dentro del Activity~~
+3. ~~Mandar la lista de datos desde el Activity al Adapter~~
+4. ~~Crear un Adapter para manejar el comportamiento de la Lista~~
+5. ~~Crear un layout a modo de celda para desplegarlo en la Lista~~
+6. Crear un ViewHolder para conectar el layout al Adapter
+
+#### Crear un ViewHolder para conectar el layout al Adapter
+
+Antes de seguir avanzando regresa al **PokemonAdapter** e importa el **ItemPokemonBinding** ya deberías poder hacerlo.
+
+Ahora vamos a crear el archivo **PokemonViewHolder** como lo hemos estado haciendo.
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+class PokemonViewHolder {  
+
+}
+```
+
+Vamos a sustituir esta declaración inicial con la herencia del ViewHolder para darle a nuestra clase las capacidades necesarias con lo siguiente:
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+import androidx.recyclerview.widget.RecyclerView  
+import com.example.kotlin.mypokedexapp.databinding.ItemPokemonBinding  
+  
+class PokemonViewHolder(private val binding: ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {  
+  
+}
+```
+
+Ahora vamos a añadir la función bind que une a nuestros datos con el layout
+
+```
+fun bind(item: PokemonBase){  
+      
+}
+```
+
+Y adentro de esta función vamos a cargar por ahora el nombre del Pokemon con la línea.
+
+```
+binding.TVName.text = item.name
+```
+
+Ya con todo, nuestra clase **ViewHolder** deberá parece como lo siguiente
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+import androidx.recyclerview.widget.RecyclerView  
+import com.example.kotlin.mypokedexapp.databinding.ItemPokemonBinding  
+  
+class PokemonViewHolder(private val binding: ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {  
+  
+    fun bind(item: PokemonBase){  
+        binding.TVName.text = item.name  
+    }  
+}
+```
+
+Con esto ya tendremos toda la configuración de la lista, pero antes de terminar regresaremos a nuestro **MainActivity**, dentro del método **setUpRecyclerView** todavía hay algo en rojo, el método **PokemonAdapter**, que bien podría manejarse como constructor, pero por facilidad algunos desarrolladores en Android lo hacen de esta manera.
+
+Por tanto vamos a nuestro **PokemonAdapter** y aquí añadiremos lo siguiente
+
+```
+fun PokemonAdapter(basicData : ArrayList<PokemonBase>){  
+    this.data = basicData  
+}
+```
+
+Como puedes notar aquí solo pasamos la lista de datos y la conectamos directamente con nuestro Adapter.
+
+El resultado del Adapter deberá quedar como se muestra
+
+```
+package com.example.kotlin.mypokedexapp  
+  
+import android.view.LayoutInflater  
+import android.view.ViewGroup  
+import androidx.recyclerview.widget.RecyclerView  
+import com.example.kotlin.mypokedexapp.databinding.ItemPokemonBinding  
+  
+class PokemonAdapter: RecyclerView.Adapter<PokemonViewHolder>() {  
+    var data:ArrayList<PokemonBase> = ArrayList()  
+  
+  
+    fun PokemonAdapter(basicData : ArrayList<PokemonBase>){  
+        this.data = basicData  
+    }  
+  
+    override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {  
+        val item = data[position]  
+        holder.bind(item)  
+    }  
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {  
+        val binding = ItemPokemonBinding.inflate(LayoutInflater.from(parent.context),parent,false)  
+        return PokemonViewHolder(binding)  
+    }  
+    override fun getItemCount(): Int {  
+        return data.size  
+    }  
+}
+```
+
+Si volvemos al **MainActivity** ya debería estar todo en orden y nada marcado en rojo.
+
+Proceso de implementación de RecyclerView:
+1. ~~Declarar el RecyclerView en la vista que lo va a contener~~
+2. ~~Crear los métodos de llamada dentro del Activity~~
+3. ~~Mandar la lista de datos desde el Activity al Adapter~~
+4. ~~Crear un Adapter para manejar el comportamiento de la Lista~~
+5. ~~Crear un layout a modo de celda para desplegarlo en la Lista~~
+6. ~~Crear un ViewHolder para conectar el layout al Adapter~~
+
+El camino ha sido largo pero si hacemos un resumen tenemos lo siguiente:
+
+1. Proyecto configurado con sus librerías correspondientes
+2. Vista principal **ActivityMain** lista y conectada con un layout y al **MANIFEST**
+3. Permiso de Internet agregado para ejecutar las llamadas al API
+4. Modelos **data class** ajustados a las respuestas de nuestro API
+5. Una **RecyclerView** completo con su **Adapter** y **ViewHolder** para desplegar un conjunto de datos de prueba.
+
+### Paso 7 Corrección de detalles
+
+Cuando intentamos correr el proyecto nos marcará error, esto por que nuestos **data classes** tienen unos problemas de sintaxis.
+
+Por ejemplo:
+
+El **GenerationI** tiene el siguiente código
+
+```
+package com.example.kotlin.mypokedexapp.pokemon  
+  
+data class GenerationI(  
+    val red-blue: RedBlue,  
+    val yellow: Yellow  
+)
+```
+
+Por sintáxis **red-blue** no es una declaración válida, pero si recuerdas esto se soluciona facilmente, agregando la anotación **@SerializedName** por lo tanto modificamos la línea a lo siguiente.
+
+```
+@SerializedName("red-blue") val red_blue: RedBlue,
+```
+
+Esto vamos a tener que realizarlo con los parámetros que tengan conflicto en los modelos.
+
+**Ejercicio corrige los detalles del @SerializedName**
+
+Una vez corregidos estos errores deberia desplegarte algo como lo siguiente.
+
+![lab_4](4_data_classes_recyclerview/4_047.png)
+
+Si quieres ver como funciona mejor, intenta añadiendo más elementos a la lista de pruebas de los Pokemon.
+
+De momento llegaremos hasta aquí en este laboratorio, en el próximo vamos a terminar la conexión con el API y ver el despliegue de la información.
