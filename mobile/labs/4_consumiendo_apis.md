@@ -758,3 +758,5 @@ Si empezamos a hacer scroll veremos todos los Pokemon disponibles en este caso l
 Con esto ya tenemos una lista completa con datos desde nuestra API, el proyecto ya cuenta con muchos archivos, es momento de empezar a aplicar Arquitectura.
 
 Esto lo haremos en el próximo laboratorio por lo que trata que el resultado final sea hasta donde vamos, si tienes dudas pide una asesoría.
+
+**Nota: Al final de este laboratorio te recomiendo que generes una copia para que en los próximos tengas un punto de comparación sobre lo que se va avanzando.**
