@@ -20,7 +20,7 @@
 |   2   | Primera App en Kotlin con ViewBinding y diseño de layouts |  |
 |   3   | Data classes y recyclerview | [Laboratorio](/mobile/labs/3_data_classes_y_recyclerview.md) |
 |   4   | Consumiendo APIs | [Laboratorio](/mobile/labs/4_consumiendo_apis.md)
-|   5   | MVVM |
+|   5   | MVVM | [Laboratorio](/mobile/labs/5_arquitectura_mvvm.md)  |
 |   6   | Fragmentos y Material Design |
 
 ## Como empezar
