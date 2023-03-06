@@ -21,7 +21,7 @@
 |   3   | Data classes y recyclerview | [Laboratorio](/mobile/labs/3_data_classes_y_recyclerview.md) |
 |   4   | Consumiendo APIs | [Laboratorio](/mobile/labs/4_consumiendo_apis.md)
 |   5   | MVVM | [Laboratorio](/mobile/labs/5_arquitectura_mvvm.md)  |
-|   6   | Fragmentos y Material Design |
+|   6   | Fragmentos y Material Design | [Laboratorio](/mobile/labs/6_fragmentos_y_material_design.md)
 
 ## Como empezar
 ### Para la clase necesitarás lo siguiente:
