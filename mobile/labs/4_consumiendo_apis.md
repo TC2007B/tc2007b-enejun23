@@ -371,7 +371,7 @@ return Retrofit.Builder()
     .client(okHttpClient)  
     .addConverterFactory(gsonFactory)  
     .build()  
-    .create(APIService::class.java)
+    .create(PokemonAPIService::class.java)
 ```
 
 El contenido del **invoke** no es más que la forma en que Retrofit nos solicita inicializar la librería, existen algunos parámetros que se pueden agregar pero eso ya va variando de aplicación en aplicación. Revisa si necesitas añadir algo más para tu proyecto en la documentación oficial.
