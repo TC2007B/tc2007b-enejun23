@@ -521,10 +521,10 @@ class SplashscreenViewModel:ViewModel() {
 En este solo vamos a definir una variable **LiveData** que es la que usamos como Observer en nuesto Activity, el método **onCreate()** solo para hacer alusión a que es el que se ejecuta sin ninguna interacción, no tiene nada que ver con el **onCreate()** del Activity. 
 
 ```
-isLoading.postValue(true)  
+finishedLoading.postValue(true)  
 viewModelScope.launch {  
 	delay(Constants.SPLASHCREEN_DURATION)  
-	isLoading.postValue(false)  
+	finishedLoading.postValue(false)  
 } 
 ```
 Dentro del **onCreate()**, pasaremos el observer a true, y de ahí vamos a iniciar una corrutina, esta será sobre el mismo Scope Default, ya que solo es para hacer el tiempo y no importa que se bloquee la interfaz, esto lo necesitamos por la llamada a **delay()** la cual espera unos milisegundos antes de hacer algo, observa que definimos una nueva constante para nuestro archivo de **utils->Constants** y una ves pasado este tiempo de espera avisamos con el **Live data** que dejamos de cargar.
