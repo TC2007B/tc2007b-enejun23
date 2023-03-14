@@ -10,8 +10,8 @@
 |   2   | [Básicos de SCRUM](https://docs.google.com/presentation/d/1Edqt9ToygvijQ44xXrnluOidSK4dFLmMq1Grd9COFro/edit?usp=sharing) |
 |   3   | [Planificación de SCRUM](https://docs.google.com/presentation/d/1XK88lC9vSiTMQPbJuoM2GOCzbQIaPmrbxgYRfgHBMwE/edit?usp=sharing) |
 |   4   | Estimaciones |
-|   5   | Reuniones y Deuda Técnica |
-|   6   | Reuniones y Burndown Chart |
+|   5   | [Reuniones y Deuda Técnica](https://docs.google.com/presentation/d/1iVrYiGfvP4sEBG_P04NJm15MPb4ZOvlOB3hEUzzrpBk/edit?usp=sharing) |
+|   6   | [Reuniones y Burndown Chart](https://docs.google.com/presentation/d/16-jrYkEDAxjLtgXDhxfa6BA6sq86ptbw341LT6FObLE/edit?usp=sharing) |
 |   7   | Retrospectivas Efectivas |
 |   8   | OKR y Hapinness Door |
 |   9   | Caso de Estudio |
